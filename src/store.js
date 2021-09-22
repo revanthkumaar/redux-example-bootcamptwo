@@ -3,7 +3,7 @@ import rotateReducer from './reducers/rotateReducer';
 import logger from 'redux-logger';
 
 
-function configureStore(state = { rotating: true }) {
-  return createStore(rotateReducer, state, applyMiddleware(logger));
+function configureStore(initialstate = { rotating: true }) {
+  return createStore(rotateReducer, initialstate, applyMiddleware(logger));
 }
 export default configureStore;
