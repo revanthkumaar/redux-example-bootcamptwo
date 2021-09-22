@@ -1,9 +1,9 @@
-import { configure } from "@testing-library/react";
-import {createStore} from "redux";
-import rotateReducer from "./reducers/rotateReducer"
+import { createStore, applyMiddleware } from 'redux';
+import rotateReducer from './reducers/rotateReducer';
+import logger from 'redux-logger';
 
-function configureStore(state={rotating:true}) {
-    return createStore(rotateReducer,state)
+
+function configureStore(state = { rotating: true }) {
+  return createStore(rotateReducer, state, applyMiddleware(logger));
 }
-
 export default configureStore;
